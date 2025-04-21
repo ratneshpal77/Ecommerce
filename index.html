@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-Commerce UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Shop</h1>
+      <div class="cart-icon" id="cartButton">
+        🛒<span class="badge">1</span>
+      </div>
+      
+      
+    </header>
+
+    <div class="search-filter">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <div class="filters">
+          <button>Category</button>
+          <button>Price</button>
+          <button>Size</button>
+          <button>Color</button>
+        </div>
+      </div>
+      
+
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://outfitters.com.pk/cdn/shop/files/F1221106003_2.jpg?v=1745214558" alt="T-Shirt">
+        <h3>T-Shirt</h3>
+        <p>$20.00</p>
+        <button class="buy-now-button">Buy Now</button>
+
+      </div>
+      <div class="product-card">
+        <img src="https://oldnavy.gap.com/webcontent/0050/522/017/cn50522017.jpg" alt="Crewneck Sweatshirt">
+        <h3>Crewneck Sweatshirt</h3>
+        <p>$35.00</p>
+        <button class="buy-now-button">Buy Now</button>
+
+      </div>
+      <div class="product-card">
+        <img src="https://pluspng.com/img-png/shirt-hd-png-plaid-shirt-starting-at-85-1618.png" alt="Dress">
+        <h3>Shirt</h3>
+        <p>$50.00</p>
+        <button class="buy-now-button">Buy Now</button>
+
+      </div>
+      <div class="product-card">
+        <img src="https://cdna.lystit.com/photos/dandyfellow/7b08d396/levis--511-Slim-Fit-Jeans.jpeg" alt="Jeans">
+        <h3>Jeans</h3>
+        <p>$40.00</p>
+        <button class="buy-now-button">Buy Now</button>
+
+      </div>
+
+      <div class="product-card">
+        <img src="https://www.stitchfix.com/men/blog/wp-content/uploads/2019/02/T3_M20_BLG_Tips-for-Adding-Color-to-Your-Closet_IN_STORY3.jpg" alt="jeans">
+        <h3>cloths</h3>
+        <p>$40.00</p>
+        <button class="buy-now-button">Buy Now</button>
+
+      </div>
+
+      <div class="product-card">
+        <img src="https://tiimg.tistatic.com/fp/2/009/005/mens-jeans-half-pant-774.jpg" alt="Jeans">
+        <h3>Jeans</h3>
+        <p>$40.00</p>
+        <button class="buy-now-button">Buy Now</button>
+
+      </div>
+
+      <div class="product-card">
+        <img src="https://static.vecteezy.com/system/resources/previews/031/730/163/non_2x/christmas-funny-sweater-isolated-png.png" alt="Jeans">
+        <h3>sweater</h3>
+        <p>$40.00</p>
+        <button class="buy-now-button">Buy Now</button>
+
+      </div>
+
+      <div class="product-card">
+        <img src="https://i.etsystatic.com/39208616/r/il/7fa836/4665547795/il_1080xN.4665547795_lwgj.jpg" alt="Jeans">
+        <h3> Baggy Jeans</h3>
+        <p>$40.00</p>
+        <button class="buy-now-button">Buy Now</button>
+
+      </div>
+
+      <div class="product-card">
+        <img src="https://ae01.alicdn.com/kf/HTB1q.48OVXXXXcfXVXXq6xXFXXXi/Winter-Big-Pockets-Thick-Men-s-Cargo-Pants-Warm-Baggy-Pants-Cotton-Trousers-For-Men-Male.jpg" alt="Jean">
+        <h3>cargo</h3>
+        <p>$40.00</p>
+        <button class="buy-now-button">Buy Now</button>
+
+      </div>
+
+      <div class="product-card">
+        <img src="https://i5.walmartimages.com/asr/56ca1ae0-6118-44ce-8996-e3e293e7ae22_1.590ceb85d1df43f05f359c4972a7c66d.jpeg" alt="frong">
+        <h3>Frog</h3>
+        <p>$40.00</p>
+        <button class="buy-now-button">Buy Now</button>
+
+      </div>
+    </div>
+
+    <!-- Payment Modal -->
+<div class="payment-modal" id="paymentModal">
+    <div class="payment-form-container">
+      <h2>Payment Information</h2>
+      <form id="paymentForm">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+  
+        <label for="expiryDate">Expiry Date</label>
+        <input type="text" id="expiryDate" placeholder="MM/YY" required>
+  
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" placeholder="123" required>
+  
+        <button type="submit">Pay Now</button>
+      </form>
+      <button id="closePaymentModal" class="cancel-btn">Cancel</button>
+    </div>
+  </div>
+  
+  
+  <footer class="site-footer">
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+    <p>Contact us at: support@yourcompany.com</p>
+    <p>Follow us on social media for the latest updates!</p>
+    <p>Privacy Policy | Terms of Service</p>
+  </footer>
+  
+  <script src="script.js"></script>
+
+  <script>
+    const paymentModal = document.getElementById('paymentModal');
+    const closePaymentModal = document.getElementById('closePaymentModal');
+  
+    // Show modal on Buy Now button click
+    document.querySelectorAll('.buy-now-button').forEach(button => {
+      button.addEventListener('click', () => {
+        paymentModal.style.display = 'block';
+      });
+    });
+  
+    // Close modal on Cancel button click
+    closePaymentModal.addEventListener('click', () => {
+      paymentModal.style.display = 'none';
+    });
+  
+    // Handle form submission
+    document.getElementById('paymentForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert("Payment Successful!");
+      paymentModal.style.display = 'none';
+    });
+  </script>
+  
+   
+
+</body>
+</html>
